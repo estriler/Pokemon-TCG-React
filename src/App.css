@@ -1,0 +1,129 @@
+#battleBoard {
+  align-items: center;
+  text-align: center;
+  background-color: lightyellow;
+  height: 850px;
+  width: 100vw;
+}
+
+#activeCard {
+  position: absolute;
+  left: 45%;
+  bottom: 11.5%;
+  max-width: 100%;
+  /* background-color: brown; */
+}
+
+#opponentActiveCard {
+  position: absolute;
+  left: 45%;
+  top: 11.5%;
+  max-width: 100%;
+}
+
+.opponentDiscardPileClass {
+  width: 11vw;
+  position: absolute;
+  left: 7%;
+}
+
+.cardOutline {
+  border: 10px;
+  width: 100px;
+  height: 140px;
+  outline-style: dashed;
+  color: darkgray;
+}
+
+.cardOutlineRow {
+  width: 900px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  /* position: absolute; */
+}
+
+.cardOutlinePrizesEnemy {
+  width: 300px;
+  height: 400px;
+  background-color: aqua;
+  position: relative;
+  bottom: 150px;
+  left: 75%;
+}
+
+.cardOutlinePrizesMine {
+  width: 300px;
+  height: 400px;
+  background-color: teal;
+  position: relative;
+  bottom: 75px;
+  left: 5%;
+}
+
+.myBenchOutline {
+  position: absolute;
+  left: 500px;
+  bottom: 0px;
+}
+
+.attackButton {
+  position: relative;
+  right: 50%;
+  bottom: 111px;
+}
+
+.attachEnergyButton {
+  position: absolute;
+  left: 30px;
+  top: 5%;
+}
+
+.hp {
+  position: relative;
+  left: 38%;
+  bottom: 326px;
+  background-color: lightsalmon;
+  width: 60px;
+  color: red;
+  font-weight: bold;
+  
+}
+
+#hand {
+  position: absolute;
+  background-color: pink;
+  width: 300px;
+  height: 200px;
+  right: 5%;
+}
+
+#activePkmnHp {
+  position: relative;
+  background-color: orange;
+  color: red;
+  width: 50px;
+  left: 61%;
+  bottom: 111%;
+}
+
+#enemyHp {
+  position: relative;
+  background-color: yellow;
+  color: red;
+  width: 50px;
+  left: 61%;
+  bottom: 106%;
+}
+
+@media (max-height: 890px) {
+  .battleBoard {
+      width: 100%;
+  }
+  .displayedCard {
+      width: 100%;
+  }
+}
