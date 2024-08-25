@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import base1 from "./components/base1.json"
+import HpBackgroundColor from './components/HpBackgroundColor';
 
 function App() {
  
@@ -14,11 +15,12 @@ function App() {
     <div id='battleBoard'>
       <div id="opponentActiveCard">
         {pikachuCard}
+        <div className='hp' style={{backgroundColor:HpBackgroundColor(opponentActiveCard)}}>{opponentActiveCard["hp"]} HP</div>
       </div>
       <div id='activeCard'>
         {ponytaCard}
         <button className='attackButton'>{activeCard["attacks"][0]["name"]}</button>
-        <div className='hp'>{activeCard["hp"]} HP</div>
+        <div className='hp' style={{backgroundColor:HpBackgroundColor(activeCard)}}>{activeCard["hp"]} HP</div>
       </div>
     </div>
   )
