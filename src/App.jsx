@@ -6,12 +6,15 @@ import Attack from './components/Attack';
 
 function App() {
 
-  // const [ activePokemonHP , setActivePokemonHP ] = useState({activeCard["hp"]});
+  // const [ activePokemonHP , setActivePokemonHP ] = useState({activePokemonHP:'activeCard["hp"]'});
+  // const [ opponentPokemonHP , setOpponentPokemonHP ] = useState({hp:'opponentActiveCard["hp"]'});
   // console.log({activeCard["hp"]});
 
-  const attackClick = () => {
-    setActivePokemonHP(Attack);
+  const attackClick = (attackIndex) => {
+    // setActivePokemonHP(Attack);
+    // setOpponentPokemonHP(opponentPokemonHP - activeCard["attacks"][attackIndex]["damage"]);
   }
+  
  
   let opponentActiveCard = base1[57];
   let pikachuCard = <img src={opponentActiveCard["images"]["small"]} />
@@ -33,7 +36,7 @@ function App() {
         <button 
           className='attackButton' onClick={attackClick}>{activeCard["attacks"][0]["name"]}</button>
         <div className='hp' style={{backgroundColor:HpBackgroundColor(activeCard)}}>{activeCard["hp"]} HP</div>
-        // {/* <div className='hp' style={{backgroundColor:HpBackgroundColor(activeCard)}}>{activePokemonHP} HP</div> */}
+        {/* <div className='hp' style={{backgroundColor:HpBackgroundColor(activeCard)}}>{activePokemonHP} HP</div> */}
       </div>
     </div>
   )
