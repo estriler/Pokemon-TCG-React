@@ -15,23 +15,35 @@ function App() {
   const [ activePokemonHP , setActivePokemonHP ] = useState(Number(activeCard["hp"]));
   const [ opponentPokemonHP , setOpponentPokemonHP ] = useState(Number(opponentActiveCard["hp"]));
 
+  const [ activePokemonKO , setActivePokemonKO ] = useState(false);
+  const [ opponentPokemonKO , setOpponentPokemonKO ] = useState(false);
+
   const attackClick = () => {
-    // setActivePokemonHP(Attack);
     setOpponentPokemonHP(opponentPokemonHP - activeCard["attacks"][0]["damage"]);
+    if (opponentPokemonHP <= 0){
+      knockOut();
+    }
   }
+
+  const knockOut = () => {
+    setOpponentPokemonKO(() => true);
+    console.log(opponentActiveCard["name"] + "has been knocked out!!!")
+  }
+
+  console.log(opponentActiveCard["name"] + " has " + opponentPokemonHP + " hp left!");
+  console.log(opponentPokemonKO);
+
 
   return (
     <div id='battleBoard'>
       <div id="opponentActiveCard">
-        {pikachuCard}
-        {/* <div className='hp' style={{backgroundColor:HpBackgroundColor(opponentActiveCard)}}>{opponentActiveCard["hp"]} HP</div> */}
+        {/* <div>{opponentPokemonKO ? {ponytaCard} : {pikachuCard}}</div> */}
         <div className='hp' style={{backgroundColor:HpBackgroundColor(opponentActiveCard)}}>{opponentPokemonHP} HP</div>
       </div>
       <div id='activeCard'>
         {ponytaCard}
         <button className='attackButton' onClick={attackClick}>{activeCard["attacks"][0]["name"]}</button>
         <div className='hp' style={{backgroundColor:HpBackgroundColor(activeCard)}}>{activePokemonHP} HP</div>
-        {/* <div className='hp' style={{backgroundColor:HpBackgroundColor(activeCard)}}>{activePokemonHP} HP</div> */}
       </div>
     </div>
   )
