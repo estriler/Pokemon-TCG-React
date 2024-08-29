@@ -37,7 +37,7 @@ function App() {
   return (
     <div id='battleBoard'>
       <div id="opponentActiveCard">
-        {/* <div>{opponentPokemonKO ? {ponytaCard} : {pikachuCard}}</div> */}
+        <div>{!opponentPokemonKO ? pikachuCard : null}</div>
         <div className='hp' style={{backgroundColor:HpBackgroundColor(opponentActiveCard)}}>{opponentPokemonHP} HP</div>
       </div>
       <div id='activeCard'>
